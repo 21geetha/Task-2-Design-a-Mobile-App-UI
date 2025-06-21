@@ -1,188 +1,39 @@
+# 📱 Task 2 – Design a Mobile App UI
 
-Task 2 is to design a Mobile App UI with at least 3 screens and navigation.
+## 📄 Project Description
+As part of my UX/UI Design Internship at **Alfido Tech**, this task focuses on designing a **simple mobile app user interface** with at least **three interactive screens** and basic navigation. The project is built using HTML, CSS, and a minimal amount of JavaScript to simulate page transitions.
 
-✅ Code: HTML + CSS + JavaScript for:
+---
 
-Login Screen
-Home Screen
-Profile Screen
-Bottom Navigation
-✅ Fully mobile-optimized design.
-✅ Lightweight and easy to deploy.
-✅ Ready for GitHub and LinkedIn.
-🧠 Applied concepts of:
+## 💡 Objectives
+- Create a visually structured and accessible mobile UI.
+- Implement a **three-screen layout** with functional navigation.
+- Practice wireframe-to-UI transformation using core web technologies.
+- Improve mobile layout and component consistency.
 
-Component-based design
-Navigation flow
-Responsive layout handling
-1. 🌙 Dark Mode Version
+---
 
-Here’s how to add a simple dark mode toggle to your mobile UI.
+## 📱 Screens Included
+1. **Home Screen**
+   - App branding/logo
+   - Welcome message
+   - Navigation buttons to Profile and Settings
 
-✨ Add this to your <style>:
+2. **Profile Screen**
+   - User information (name, email)
+   - Editable fields (static/dummy)
+   - Back/Home navigation
 
-body.dark {
-  background: #121212;
-}
-body.dark .app {
-  background: #1e1e1e;
-  color: white;
-}
-body.dark input,
-body.dark button {
-  background: #333;
-  color: white;
-  border: 1px solid #555;
-}
-body.dark .nav {
-  background: #222;
-  border-color: #444;
-}
+3. **Settings Screen**
+   - Basic toggle items (e.g., dark mode, notifications)
+   - Navigation to go back to Home
 
-✨ Add a toggle button in your .nav section:
+---
 
-<button onclick="toggleDarkMode()">🌙</button>
+## 🛠️ Tools Used
+- **HTML5** – for semantic layout structure
+- **CSS3** – for mobile-friendly styling
+- **JavaScript** (optional) – for basic screen toggling/navigation
+- **VS Code** – as the development environment
 
-✨ Add this to your <script>:
-
-function toggleDarkMode() {
-  document.body.classList.toggle('dark');
-}
-
-Now your mobile UI supports light/dark mode toggle like modern apps! 🎉
-
-🔹 2. 🎨 Figma Design Mockup Request
-
-If you’d like, I can generate a Figma-style mockup image of your mobile app (Login → Home → Profile screens).
-Please confirm:
-Want grayscale (wireframe style)?
-Or colorful with UI elements like buttons/icons?
-📌 (Say "wireframe mockup" or "color UI mockup")
-
-🔹 3. 🔐 Real Login Validation (Bonus JS)
-Add this logic to your login button for simple form validation:
-<input type="text" id="username" placeholder="Username">
-<input type="password" id="password" placeholder="Password">
-<button onclick="login()">Login</button>
-
-function login() {
-  const user = document.getElementById("username").value;
-  const pass = document.getElementById("password").value;
-
-  if (user === "admin" && pass === "1234") {
-    navigateTo('home');
-  } else {
-    alert("Invalid username or password!");
-  }
-}
-
-✅ Username: admin
-✅ Password: 1234
-
-✅ Over all Code for : HTML + CSS + JavaScript for:
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Mobile App UI</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background: #f0f0f0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
-    .app {
-      width: 360px;
-      height: 640px;
-      background: white;
-      box-shadow: 0 0 10px rgba(0,0,0,0.2);
-      overflow: hidden;
-      border-radius: 12px;
-      position: relative;
-    }
-    .screen {
-      display: none;
-      padding: 30px 20px;
-      height: 100%;
-      flex-direction: column;
-      justify-content: center;
-    }
-    .screen.active {
-      display: flex;
-    }
-    h2 {
-      margin-bottom: 20px;
-    }
-    input, button {
-      margin: 10px 0;
-      padding: 12px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      width: 100%;
-    }
-    .nav {
-      position: absolute;
-      bottom: 0;
-      display: flex;
-      width: 100%;
-      justify-content: space-around;
-      background: #eee;
-      padding: 10px 0;
-      border-top: 1px solid #ccc;
-    }
-    .nav button {
-      background: none;
-      border: none;
-      font-weight: bold;
-      cursor: pointer;
-    }
-  </style>
-</head>
-<body>
-  <div class="app">
-    <!-- Login Screen -->
-    <div class="screen active" id="login">
-      <h2>Login</h2>
-      <input type="text" placeholder="Username">
-      <input type="password" placeholder="Password">
-      <button onclick="navigateTo('home')">Login</button>
-    </div>
-
-    <!-- Home Screen -->
-    <div class="screen" id="home">
-      <h2>Home</h2>
-      <p>Welcome, Venkatesh! 🎉</p>
-    </div>
-
-    <!-- Profile Screen -->
-    <div class="screen" id="profile">
-      <h2>Profile</h2>
-      <p>Name: Vangara Venkatesh</p>
-      <p>Intern: UX/UI Design @ Alfido Tech</p>
-    </div>
-
-    <!-- Navigation -->
-    <div class="nav">
-      <button onclick="navigateTo('home')">Home</button>
-      <button onclick="navigateTo('profile')">Profile</button>
-      <button onclick="navigateTo('login')">Logout</button>
-    </div>
-  </div>
-
-  <script>
-    function navigateTo(screenId) {
-      document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
-      document.getElementById(screenId).classList.add('active');
-    }
-  </script>
-</body>
-</html>
+---
