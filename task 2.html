@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mobile App UI</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f0f0f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .app {
+      width: 360px;
+      height: 640px;
+      background: white;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      overflow: hidden;
+      border-radius: 12px;
+      position: relative;
+    }
+    .screen {
+      display: none;
+      padding: 30px 20px;
+      height: 100%;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .screen.active {
+      display: flex;
+    }
+    h2 {
+      margin-bottom: 20px;
+    }
+    input, button {
+      margin: 10px 0;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      width: 100%;
+    }
+    .nav {
+      position: absolute;
+      bottom: 0;
+      display: flex;
+      width: 100%;
+      justify-content: space-around;
+      background: #eee;
+      padding: 10px 0;
+      border-top: 1px solid #ccc;
+    }
+    .nav button {
+      background: none;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <!-- Login Screen -->
+    <div class="screen active" id="login">
+      <h2>Login</h2>
+      <input type="text" placeholder="Username">
+      <input type="password" placeholder="Password">
+      <button onclick="navigateTo('home')">Login</button>
+    </div>
+
+    <!-- Home Screen -->
+    <div class="screen" id="home">
+      <h2>Home</h2>
+      <p>Welcome, Geetha! 🎉</p>
+    </div>
+
+    <!-- Profile Screen -->
+    <div class="screen" id="profile">
+      <h2>Profile</h2>
+      <p>Name: Chiranji Geetha</p>
+      <p>Intern: UX/UI Design @ Alfido Tech</p>
+    </div>
+
+    <!-- Navigation -->
+    <div class="nav">
+      <button onclick="navigateTo('home')">Home</button>
+      <button onclick="navigateTo('profile')">Profile</button>
+      <button onclick="navigateTo('login')">Logout</button>
+    </div>
+  </div>
+
+  <script>
+    function navigateTo(screenId) {
+      document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+      document.getElementById(screenId).classList.add('active');
+    }
+  </script>
+</body>
+</html>
